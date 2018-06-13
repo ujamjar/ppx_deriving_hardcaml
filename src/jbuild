@@ -1,0 +1,8 @@
+(jbuild_version 1)
+
+(library
+ ((name ppx_deriving_hardcaml)
+  (public_name ppx_deriving_hardcaml)
+  (libraries (ppx_deriving.api hardcaml))
+  (preprocess (action (run ppxfind -legacy ppx_tools.metaquot --as-pp ${<})))
+  (kind ppx_deriver)))
